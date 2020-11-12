@@ -1,0 +1,40 @@
+// Retina
+@mixin retina() {
+  @media all and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+// Handy breakpoints
+@mixin breakpoint($point) {
+  @if $point == big {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == phoneheight {
+    @media (max-height: 430px) { @content; }
+  }
+  @else if $point == tablet-landscape {
+    @media (max-width: 1024px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $point == phone {
+    @media (max-width: 568px)  { @content; }
+  }
+  @else if $point == superlarge {
+    @media (max-width: 1330px)  { @content; }
+  }
+}
+
+@mixin clear() {
+	&:before, &:after {
+	    content: "\0020";
+	    display: block;
+	    height: 0;
+	    overflow: hidden;
+	}
+	&:after {
+	    clear: both;
+	}
+}

@@ -1,0 +1,317 @@
+@import "../_sass/vendor/bootstrap.css";
+@import "includes/*";
+
+body {
+	height: 100%;
+	background: $secondary;
+	background-attachment: fixed;
+	background-repeat: no-repeat; 
+	font-size: normal 100%;
+	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: $primary;
+	font-weight: bold;
+}
+
+.btn {
+	border: none;
+	display: block;
+	margin: 0;
+	padding: 3%;
+	width: 100%;
+	border-radius: 5px;
+	background-color: $black;
+	color: $secondary;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	font-weight: bold;
+	font-size: 1.5em;
+	
+	&:hover {
+		background-color: $black;
+		border: none;
+		color: $secondary;
+		opacity: 0.9;
+	}
+}
+
+.alert-info {
+	background-color: transparent;
+	border: 10px solid $black;
+	color: $black;
+	margin: -5px 15px 15px;
+	border-radius: 0;
+}
+
+.textbox {
+	padding: 10px;
+	border: 10px solid $black;
+	
+	h2 {
+		margin-top: 10px;
+		font-size: 1.8em;
+		color: #1b1e21;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}
+
+header {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	
+	#logo {
+		display: block;
+		margin: 0 auto;
+		width: 250px;
+		height: 250px;
+		background-image: url("../img/logo.png");
+		background-size: 240px 242px;
+		background-repeat: no-repeat;
+		
+		@include retina() {
+			background-image: url("../img/logo@2x.png");
+		}
+		
+		&:hover {
+			opacity: 0.9;
+		}
+		
+		h1 {
+			text-indent: -10000px; // Hide the text in the h1
+		}
+	}	
+}
+
+.startPage {
+	.callout {
+		display: block;
+		margin: 0;
+		margin-bottom: 15px;
+		padding: 5%;
+		width: 100%;
+		border-radius: 5px;
+		background-color: $black;
+		color: $secondary;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		font-weight: bold;
+		font-size: 1.5em;
+		
+		&:hover {
+			opacity: 0.9;
+			text-decoration: none;
+		}
+		
+		&.prime {
+			background-color: $primary;
+		}
+	}
+	
+	.meme {
+		padding: 0 15px 15px 15px;
+		
+		img {
+			width: 100%;
+			border: 10px solid $black;
+			
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+}
+
+.register {
+	.form {
+		padding: 10px;
+		border: 10px solid $black;
+		margin-bottom: 15px;
+	}
+}
+
+.login {
+	margin-bottom: 15px;
+	
+	.textbox {
+		margin-bottom: 15px;
+	}
+	
+	.meme img {
+		width: 100%;
+		border: 10px solid $black;	
+	}
+}
+
+.generateMeme {	
+	.textbox {
+		margin-bottom: 15px;
+	}
+	
+	#imagesContainer {
+		display: block;
+		
+		.image {			
+			label > input {
+			  display: none;
+			}
+			
+			label > input + img {
+			  cursor: pointer;
+			  border: 5px solid $black;
+			}
+			
+			label > input:checked + img {
+			  border: 5px solid $primary;
+			}
+						
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.viewMeme {
+	padding-bottom: 15px;
+	
+	img {
+		width: 100%;
+		border: 10px solid $black;
+		margin-bottom: 15px;
+	}
+			
+	.textbox {
+		text-align: center;	
+				
+		h2 {
+			margin-top: 10px;
+			margin-bottom: 20px;
+			font-size: 2.3em;
+			color: #1b1e21;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		
+		#lol {
+			margin-top: 10px;
+			background-color: $black;
+			color: $white;
+			width: 100%;	
+			padding: 3%;
+			color: $secondary;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			font-weight: bold;
+			font-size: 1.5em;
+			margin-bottom: 15px;
+			
+			&:hover {
+				opacity: 0.9;
+				text-decoration: none;
+			}
+		}	
+
+		#link {
+			border-top: 10px solid $black;
+			border-bottom: 10px solid $black;
+			padding-top: 15px;
+			padding-bottom: 10px;
+			color: $black;
+			text-transform: uppercase;
+			font-size: 1em;
+			
+			input[type=text] {
+				background: rgba(0, 0, 0, 0);
+				border: none;
+				margin-left: 5px;
+			}
+		}
+		
+		#share {
+			border-bottom: 10px solid $black;
+			padding-bottom: 10px;
+			
+			@include clear();
+			
+			.btn {
+				float: left;
+				display: block;
+				background-color: $black;
+				color: $white;
+				width: 32.3%;	
+				margin-left: 1%;
+				padding: 1%;
+				color: $secondary;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 0.3px;
+				font-weight: bold;
+				font-size: 1em;
+				
+				&:hover {
+					opacity: 0.9;
+					text-decoration: none;
+				}
+			}
+		}
+		
+		#create {
+			display: block;
+			margin-top: 10px;
+			background-color: $black;
+			color: $white;
+			width: 100%;	
+			padding: 1%;
+			color: $secondary;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			font-weight: bold;
+			font-size: 1.5em;
+			
+			&:hover {
+				opacity: 0.9;
+				text-decoration: none;
+			}
+		}
+		
+		#delete {
+			display: block;
+			margin-top: 10px;
+			background-color: $black;
+			color: $white;
+			width: 100%;	
+			padding: 1%;
+			color: $secondary;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0.3px;
+			font-weight: bold;
+			font-size: 1.5em;
+			
+			&:hover {
+				opacity: 0.9;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+footer {
+	margin: 15px 0 30px;
+	
+	nav {
+		text-align: center;
+		
+		a + a {
+			margin-left: 25px;
+		}
+	}
+}
